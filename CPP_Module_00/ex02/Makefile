@@ -6,11 +6,11 @@
 #    By: khovakim <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/29 16:20:16 by khovakim          #+#    #+#              #
-#    Updated: 2023/06/30 17:21:22 by khovakim         ###   ########.fr        #
+#    Updated: 2023/06/30 17:29:36 by khovakim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	PhoneBook
+NAME	=	Account
 SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(patsubst %.cpp, %.o, $(SRCS))
 

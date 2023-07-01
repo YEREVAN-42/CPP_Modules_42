@@ -6,7 +6,7 @@
 /*   By: khovakim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 19:55:55 by khovakim          #+#    #+#             */
-/*   Updated: 2023/06/29 20:10:33 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:47:04 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ void Contact::SetSecret(const std::string& secret)
 	this->msecret = secret;
 }
 
-std::string GetFirstName() const
+std::string Contact::GetFirstName() const
 {
 	return this->mfirstName;
 }
 
-std::string GetLastName() const
+std::string Contact::GetLastName() const
 {
 	return this->mlastName;
 }
 
-std::string GetNickName() const
+std::string Contact::GetNickName() const
 {
 	return this->mnickName;
 }
 
-std::string GetPhone() const
+std::string Contact::GetPhone() const
 {
 	return this->mphone;
 }
 
-std::string GetSecret() const
+std::string Contact::GetSecret() const
 {
 	return this->msecret;
 }
