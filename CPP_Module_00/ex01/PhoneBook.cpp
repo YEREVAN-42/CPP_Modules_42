@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khovakim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 10:12:18 by khovakim          #+#    #+#             */
-/*   Updated: 2023/06/30 17:18:43 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/01 16:39:45 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void PhoneBook::Add()
 
 	this->mcontact[mcurrent % 8] = contact;
 	++mcurrent;
-	if (mindex <= 8) {
+	if (mcurrent <= 8) {
 		mindex = mcurrent;
 	}
-	std::cout << YELLOW << "*------ADDED-------*" << std::endl;
+	std::cout << YELLOW << "------ADDED-------" << std::endl;
 }
 
 void PhoneBook::Show()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khovakim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:02:06 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/01 15:09:30 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/01 16:17:20 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,7 @@ void Account::makeDeposit(int deposit)
 bool Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
-	if (this->_amount - withdrawal < 0)
-	{
+	if (this->_amount - withdrawal < 0) {
 		std::cout << "index:" << this->_accountIndex
 			<< ";p_amount:" << this->_amount << ";withdrawal:refused"
 			<< std::endl;
@@ -99,6 +98,16 @@ bool Account::makeWithdrawal(int withdrawal)
 
 void Account::_displayTimestamp()
 {
+	time_t nowTime;
+	tm*    localTime;
 
+	time(&nowTime);
+	localTime = std::localtime(&nowTime);
+	std::cout << std::setfill('0') << "[" << (localTime->tm_year + 1900);
+	std::cout << std::setw(2) << localTime->tm_mon;
+	std::cout << std::setw(2) << localTime->tm_mday << "_";
+	std::cout << std::setw(2) << localTime->tm_hour;
+	std::cout << std::setw(2) << localTime->tm_min;
+	std::cout << std::setw(2) << localTime->tm_sec << "] ";
 }
 
