@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:18:13 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/11 18:48:41 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:18:04 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ public:
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	
+public:
+	void setAttackDamage(unsigned int a);
+	int  getAttackDamage() const;
 	
 private:
 	std::string  mname;

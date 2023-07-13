@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 15:39:14 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/11 18:52:28 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:17:44 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 	mattackDamage = other.mattackDamage;
 	return *this;
 }
+
+int  ClapTrap::getAttackDamage() const { return mattackDamage; }
+void ClapTrap::setAttackDamage(unsigned int a) { mattackDamage = a; }
 
 void ClapTrap::attack(const std::string& target)
 {
