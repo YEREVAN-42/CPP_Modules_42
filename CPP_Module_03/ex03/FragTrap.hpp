@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 01:42:00 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/14 13:38:48 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/14 14:19:52 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap 
+class FragTrap : virtual public ClapTrap 
 {
 public:
 	FragTrap();
