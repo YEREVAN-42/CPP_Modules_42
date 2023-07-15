@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:35:49 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/01 16:23:41 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/15 14:50:07 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 	Show();
 	while (1)
 	{
-	std::cout << CYAN << "Enter " << GREEN 
+		std::cout << CYAN << "Enter " << GREEN 
 		<< "command " << CYAN << "from up " << WHITE;
 		getline(std::cin, cmd);
 		if (std::cin.eof()) {
