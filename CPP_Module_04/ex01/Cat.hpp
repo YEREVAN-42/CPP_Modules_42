@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 19:36:16 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/17 16:16:22 by khovakim         ###   ########.fr       */
+/*   Created: 2023/07/15 19:23:56 by khovakim          #+#    #+#             */
+/*   Updated: 2023/07/17 17:44:05 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  __DOG_HPP__
-# define __DOG_HPP__
+#ifndef  __CAT_HPP__
+# define __CAT_HPP__
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 public:
-	Dog();
-	Dog(const Dog& other);
-	virtual ~Dog();
-
-	Dog& operator=(const Dog& other);
+	Cat();
+	Cat(const Cat& other);
+	virtual ~Cat();
+	
+	Cat& operator=(const Cat& other);
 
 public:
 	virtual void makeSound() const;
+
+private:
+	Brain* mbrain;
 };
 
 #endif

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 19:36:16 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/17 16:16:22 by khovakim         ###   ########.fr       */
+/*   Created: 2023/07/17 17:13:33 by khovakim          #+#    #+#             */
+/*   Updated: 2023/07/17 17:28:59 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef  __DOG_HPP__
-# define __DOG_HPP__
+#ifndef  __BRAIN_HPP__
+# define __BRAIN_HPP__
 
-# include "Animal.hpp"
+# include <string>
+# include <iostream>
 
-class Dog : public Animal
+class Brain
 {
 public:
-	Dog();
-	Dog(const Dog& other);
-	virtual ~Dog();
+	Brain();
+	Brain(const Brain& other);
+	~Brain();
 
-	Dog& operator=(const Dog& other);
+	Brain& operator=(const Brain& other);
 
 public:
-	virtual void makeSound() const;
+	const std::string& operator[](std::size_t pos) const;
+	std::string&       operator[](std::size_t pos);
+
+private:
+	std::string mideas[100];
 };
 
 #endif

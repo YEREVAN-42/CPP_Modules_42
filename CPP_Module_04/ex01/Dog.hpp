@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 19:36:16 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/17 16:16:22 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:48:26 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __DOG_HPP__
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -26,6 +27,9 @@ public:
 
 public:
 	virtual void makeSound() const;
+
+private:
+	Brain* mbrain;
 };
 
 #endif

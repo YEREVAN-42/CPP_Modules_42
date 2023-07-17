@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:21:43 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/17 16:44:47 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:56:38 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,26 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j    = new Dog();
-	const Animal* i    = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-  meta->makeSound();
+	const Animal* x = new Dog();
+	const Animal* y = new Cat();
+	delete x;//should not create a leak
+	delete y;
+	std::cout << "***************" << std::endl;
 
-	// const WrongAnimal* wrongAnimal = new WrongAnimal();
-	// const WrongAnimal* wrongCat    = new WrongCat();
-	// // const WrongCat*    catCat      = new WrongCat();
-	
-	// std::cout << wrongCat->getType() << " " << std::endl;
-  
-	// // catCat->makeSound();
-	// wrongCat->makeSound();
-	// wrongAnimal->makeSound();
+	Animal *arr[10];
+
+	for (int i = 0; i < 10; ++i) {
+		if ((i & 1) == 0) {
+			arr[i] = new Cat();
+		} else {
+			arr[i] = new Dog(); 
+		}
+		std::cout << "-------------" << std::endl;
+	}
+
+	for (int i = 0; i < 10; ++i) {
+		delete arr[i];
+	}
+    // system("leaks fire");
   return 0;
 }
