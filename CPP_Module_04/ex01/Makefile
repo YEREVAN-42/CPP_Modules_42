@@ -6,7 +6,7 @@
 #    By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/15 18:09:53 by khovakim          #+#    #+#              #
-#    Updated: 2023/07/17 18:20:38 by khovakim         ###   ########.fr        #
+#    Updated: 2023/07/18 20:57:45 by khovakim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADRS	= $(wildcard ./*.hpp)
 OBJS	= $(patsubst ./%.cpp, ./%.o, $(SRCS))
 
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= #-Wall -Wextra -Werror -std=c++98
 
 Rm	= rm -rf
 
