@@ -5,41 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 18:21:43 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/18 14:43:19 by khovakim         ###   ########.fr       */
+/*   Created: 2023/07/18 15:10:20 by khovakim          #+#    #+#             */
+/*   Updated: 2023/07/18 19:09:19 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
 
 int main()
 {
-	const Animal* x = new Dog();
-	const Animal* y = new Cat();
-	delete x;//should not create a leak
-	delete y;
-	std::cout << "***************" << std::endl;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	Animal *arr[5];
+	ICharacter* me = new Character("me");
+	
+	AMateria* tmp;
 
-	for (int i = 0; i < 5; ++i) {
-		if ((i & 1) == 0) {
-			arr[i] = new Cat();
-		} else {
-			arr[i] = new Dog(); 
-		}
-		std::cout << "-------------" << std::endl;
-	}
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
 
-	for (int i = 0; i < 5; ++i) {
-		delete arr[i];
-	}
-    // system("leaks fire");
-  return 0;
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+
+	return 0;
 }

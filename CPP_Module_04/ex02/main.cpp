@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:21:43 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/18 14:43:19 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/18 14:43:01 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@
 
 int main()
 {
+	// Animal a();
 	const Animal* x = new Dog();
 	const Animal* y = new Cat();
-	delete x;//should not create a leak
+	delete x;
 	delete y;
 	std::cout << "***************" << std::endl;
 

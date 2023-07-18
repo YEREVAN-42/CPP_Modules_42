@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 19:27:53 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/18 19:32:08 by khovakim         ###   ########.fr       */
+/*   Created: 2023/07/17 16:32:47 by khovakim          #+#    #+#             */
+/*   Updated: 2023/07/17 16:39:28 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat")
-{ std::cout << "Default constructor called for Cat" << std::endl; }
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
+{ std::cout << "Default constructor called for WrongCat" << std::endl; }
 
-Cat::Cat(const Cat& other) : Animal(other.mtype)
-{ std::cout << "Copy constructor called for Cat" << std::endl; }
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other.mtype)
+{ std::cout << "Copy constructor called for WrongCat" << std::endl; }
 
-Cat::~Cat()
-{ std::cout << "Destructor called for Cat" << std::endl; }
+WrongCat::~WrongCat()
+{ std::cout << "Destructor called for WrongCat" << std::endl; }
 
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
-	std::cout << "Copy assignment operator called for Cat" << std::endl;
+	std::cout << "Copy assignment operator called for WrongCat" << std::endl;
 	if (this == &other) {
 		return *this;
 	}
@@ -31,5 +31,5 @@ Cat& Cat::operator=(const Cat& other)
 	return *this;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 { std::cout << "Meow" << std::endl; }
