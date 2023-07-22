@@ -6,16 +6,16 @@
 #    By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 14:49:48 by khovakim          #+#    #+#              #
-#    Updated: 2023/07/22 16:20:44 by khovakim         ###   ########.fr        #
+#    Updated: 2023/07/22 21:02:08 by khovakim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Bureaucrat
-SRCS	= $(wildcard ./*.cpp)
+NAME		= AForm
+SRCS		= $(wildcard ./*.cpp)
 HEADRS	= $(wildcard ./*.hpp)
-OBJS	= $(patsubst ./%.cpp, ./%.o, $(SRCS))
+OBJS		= $(patsubst ./%.cpp, ./%.o, $(SRCS))
 
-CXX			= c++
+CXX				= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 Rm	= rm -rf

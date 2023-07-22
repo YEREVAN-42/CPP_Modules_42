@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 20:34:29 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/22 16:35:34 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/22 21:05:55 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,21 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 		<< RESET;
 	
 	return out;
+}
+
+void	Bureaucrat::signForm(Form& form) const
+{
+	try {
+		form.beSigned(*this);
+		std::cout << BOLDBLUE;
+		std::cout << this->getName() << " signed " << form.getName();
+		std::cout << RESET;
+	} catch (const std::exception &e) {
+		std::cerr << BOLDRED << "Exception: ❗️ " << BOLDYELLOW;
+		std::cerr << this->getName() << " couldn't sign " << form.getName();
+		std::cerr << " because - " << e.what() << RESET;
+	}
+	std::cout << std::endl;
 }
 
 //		--------------------------------------------------------------------------

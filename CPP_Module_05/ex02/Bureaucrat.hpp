@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:15:55 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/22 16:27:14 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/22 21:21:38 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@
 # include <iostream>
 # include <exception>
 
+# include "AForm.hpp"
 # include "Colors.hpp"
 
 const int MAX = 1;
 const int MIN = 150;
+
+class AForm;
 
 class Bureaucrat
 {
@@ -42,6 +45,10 @@ public:
 public:
 	void increment();
 	void decrement();
+	
+public:
+	void signAForm(AForm& aForm) const;
+	void executeAForm(const AForm& aForm) const;
 	
 private:
 	class GradeTooHighException : public std::exception

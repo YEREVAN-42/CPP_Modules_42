@@ -6,7 +6,7 @@
 /*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 20:34:29 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/22 16:35:34 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/22 21:36:13 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,34 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 		<< RESET;
 	
 	return out;
+}
+
+void	Bureaucrat::signAForm(AForm& AForm) const
+{
+	try {
+		AForm.beSigned(*this);
+		std::cout << BOLDBLUE;
+		std::cout << this->getName() << " signed " << AForm.getName();
+		std::cout << RESET;
+	} catch (const std::exception &e) {
+		std::cerr << BOLDRED << "Exception: ❗️ " << BOLDYELLOW;
+		std::cerr << this->getName() << " couldn't sign " << AForm.getName();
+		std::cerr << " because - " << e.what() << RESET;
+	}
+	std::cout << std::endl;
+}
+
+void Bureaucrat::executeAForm(const AForm& aForm) const
+{
+	try {
+		aForm.execute(*this);
+		std::cout << BOLDBLUE;
+		std::cout << this->mname << " executes form " << aForm.getName();
+		std::cout << RESET << std::endl;
+	} catch (const std::exception& e) {
+		std::cerr << BOLDRED << "Exception: ❗️ " << BOLDYELLOW;
+		std::cerr << mname << "'s " << e.what() << RESET << std::endl;
+	}
 }
 
 //		--------------------------------------------------------------------------
