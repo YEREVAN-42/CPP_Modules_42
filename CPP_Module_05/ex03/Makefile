@@ -6,11 +6,11 @@
 #    By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 14:49:48 by khovakim          #+#    #+#              #
-#    Updated: 2023/07/25 01:24:15 by khovakim         ###   ########.fr        #
+#    Updated: 2023/07/25 01:31:47 by khovakim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= AForm
+NAME		= Intern
 SRCS		= $(wildcard ./*.cpp)
 HEADRS	= $(wildcard ./*.hpp)
 OBJS		= $(patsubst ./%.cpp, ./%.o, $(SRCS))
