@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khovakim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:14:24 by khovakim          #+#    #+#             */
-/*   Updated: 2023/07/25 17:14:31 by khovakim         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:49:02 by khovakim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 # include "Colors.hpp"
 
+# include <cmath>
 # include <string>
+// # include <cstdlib>
+# include <limits>
 # include <sstream>
 # include <iostream>
 
@@ -32,6 +35,9 @@ private:
 	ScalarConverter& operator=(const ScalarConverter& other);
 
 private:
+	static bool isFinite(float);
+	static bool isFinite(double);
+
 	static bool isInt(const std::string&);
 	static bool isChar(const std::string&);
 	static bool isFloat(const std::string&);

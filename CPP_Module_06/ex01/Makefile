@@ -6,11 +6,11 @@
 #    By: khovakim <khovakim@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 17:22:02 by khovakim          #+#    #+#              #
-#    Updated: 2023/07/27 14:34:37 by khovakim         ###   ########.fr        #
+#    Updated: 2023/07/27 15:21:26 by khovakim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Converter
+NAME		= Serializer
 SRCS		= $(wildcard ./*.cpp)
 HEADRS	= $(wildcard ./*.hpp)
 OBJS		= $(patsubst ./%.cpp, ./%.o, $(SRCS))
